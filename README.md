@@ -1,6 +1,6 @@
 #  Deploy SDXL 1.0 on Vertex AI Prediction
 
-This code shows how to **deploy a SDXL1.0 model** in Vertex AI Prediction with a A100 GPU. The model will be downloaded and embedded in a custom prediction image, using an [Uvicorn](https://www.uvicorn.org/) server. You will use a `a2-highgpu-1g` machine type with 1xA100 NVidia GPU in **Vertex AI Prediction**.
+This code shows how to **deploy a SDXL1.0 model** in Vertex AI Prediction with a A100 GPU. The model will be downloaded and embedded in a custom prediction image, using an [Uvicorn](https://www.uvicorn.org/) server. You will use a `a2-highgpu-1g` machine type with **1xA100 NVidia GPU** in **Vertex AI Prediction**.
 
 A demo based on [Gradio](https://gradio.app/) and deployed in [Cloud Run](https://cloud.google.com/run) is also provided to easily make requests into the deployed model.
 
@@ -9,10 +9,10 @@ A demo based on [Gradio](https://gradio.app/) and deployed in [Cloud Run](https:
 
 [Released in July 2023](https://stability.ai/blog/stable-diffusion-sdxl-1-announcement), [Stable Diffusion XL 1.0](https://stablediffusionxl.com/) or SXDL 1.0 is the latest image generation model from Stability AI. Compared to previos versions, it has the following differences:
 
-* Better human anatomy: Previous SD models had visible problems with generating correct human anatom.
-* Artistic styles: SDXL offers several artistic styles for image generation, for example,  Photographic, Digital Art, Comic book, Fantasy art, Analog film, Neon punk, and many others.
-* Shorter prompts: SDXL understands short prompts much better than the previous models.
-* Improved composition in images.
+* **Better human anatomy**: Previous SD models had visible problems with generating correct human anatom.
+* **Artistic styles**: SDXL offers several artistic styles for image generation, for example,  Photographic, Digital Art, Comic book, Fantasy art, Analog film, Neon punk, and many others.
+* **Shorter prompts**: SDXL understands short prompts much better than the previous models.
+* **Improved composition** in images.
 
 SDXL is a latent diffusion model, where the diffusion operates in a pretrained, learned (and fixed) latent space of an autoencoder. 
 While the bulk of the semantic composition is done by the latent diffusion model, local, high-frequency details in generated images can be improved by the quality of the autoencoder. In this case, we use the new `madebyollin/sdxl-vae-fp16-fix` which is as good as SDXL VAE but runs twice as fast and uses significantly less memory.
@@ -137,7 +137,7 @@ gcloud run deploy sdxl10-gradio --port 8501 --image europe-west4-docker.pkg.dev/
 
 The Gradio app is now deployed in Cloud Run. You can test the provided examples or try yours. 
 
-![Gradio app](images/gradio_app_sdxl.png)
+<img src="images/gradio_app_sdxl.png" alt="Gradio app" width="400" height="200"/>
 
 
 ## References
